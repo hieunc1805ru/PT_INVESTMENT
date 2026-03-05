@@ -1,577 +1,942 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BLISSWHIP | Phuc Thanh Group</title>
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
-  background-size: cover;
-  padding-bottom: 40px;
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ================= HEADER ================= */
-header {
-  height: 130px;
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
-  background-size: cover;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.35s ease-in-out;
-}
-
-header.hide-header {
-  transform: translateY(-100%);
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-}
-
-.logo img {
-  height: 132px;
-  width: 230px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-  font-size: 20px;
-  margin-bottom: 18px;
-}
-
-nav ul li a {
-  color: lightgreen;
-  font-weight: 600;
-}
-
-nav ul li a:hover {
-  color: #ff6f00;
-}
-
-/* ================= HERO ================= */
-#hero {
-  position: relative;
-  height: 85vh;
-  overflow: hidden;
-  color: #fff;
-}
-
-/* SLIDER LIÊN TỤC */
- .hero-slider {
-  position: absolute;
-  inset: 0;
-
-  background-image:
-     url('https://cdn.bitrix24.com/b28854747/landing/944/944c910a3c260ec2ea73a25ea10ad4e9/bw1_1x.png'),
-    url('https://cdn.bitrix24.com/b28854747/landing/bed/bedd98380ac9ab9d6ee0d2307daf4a17/bw2_1x.png'),
-    url('https://cdn.bitrix24.com/b28854747/landing/ec7/ec7ebc7a3243558e0b1b4e52397c842c/bw3_1x.png'),
-    url('https://cdn.bitrix24.com/b28854747/landing/36b/36b2af9272cf6d559ad422c9f207749f/bw4_1x.png');
-    
-  background-repeat: no-repeat;
-  background-size: 100vw 100%;
-  background-position:
-    0 0,
-    100vw 0,
-    200vw 0,
-    300vw 0;
-
-  animation: heroSlide 30s linear infinite;
-}
-
-@keyframes heroSlide {
-  from {
-    background-position:
-      0 0,
-      100vw 0,
-      200vw 0,
-      300vw 0;
-  }
-  to {
-    background-position:
-      -300vw 0,
-      -200vw 0,
-      -100vw 0,
-      0 0;
-  }
-}
-
-.hero-content {
-  color: lightgreen;
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: rgba(0,0,0,0.35);
-  padding: 0 20px;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.hero-content p {
-  color: lightgreen;
-  font-size: 18px;
-  max-width: 600px;
-  margin-bottom: 24px;
-}
-
-.btn {
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-.btn-primary {
-  background: #ff6f00;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #e65f00;
-}
-
-/* ================= COMMON SECTION ================= */
-.section {
-  padding: 60px 0;
-  margin: 0 300px;
-}
-
-.section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 32px;
-}
-
-/* ================= ABOUT US ================= */
-.product-cards {
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/bfe/bfe210b08c403f042ab789e9ee5fd85f/sky3_1x.png");
-  background-size: cover;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-  margin-bottom: 12px;
-  color: green;
-}
-
-.card ul {
-  margin-top: 10px;
-  padding-left: 18px;
-}
-
-/* ================= QUALITY COMMITMENT ================= */
-.carousel-container {
-  overflow: hidden;
-}
-
-.carousel-slide {
-  display: flex;
-  width: 300%;
-  animation: slide 18s infinite linear;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
-  background-size: cover;
-  text-align: center;
-  padding: 18px 0;
-  transition: transform 0.35s ease-in-out;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-
-footer p {
-  color: #ff6f00;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 34px;
-  }
-
-  nav ul {
-    gap: 14px;
-  }
-
-  .section {
-    margin: 0 20px;
-  }
-}
-
-/* ẨN SCROLLBAR */
-html, body {
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* ===== CERTIFICATION AUTO CAROUSEL ===== */
-
-.cert-carousel {
-  position: relative;
-  overflow: hidden;
-  padding: 20px 0;
-  width: 100%;
-}
-
-.cert-slide {
-  display: flex;
-  width: max-content;
-  gap: 28px;
-  animation: certScroll 22s linear infinite;
-}
-
-.cert-carousel:hover .cert-slide {
-  animation-play-state: paused;
-}
-
-/* animation chạy liên tục */
-@keyframes certScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* CARD STYLE */
-.slide-item {
-  background:lightskyblue;
-  width: 300px;
-  border-radius: 16px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  transition: all 0.35s ease;
-  cursor: pointer;
-}
-
-/* Hover zoom + nổi */
-.slide-item:hover {
-  transform: scale(1.08);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
-}
-
-/* IMAGE */
-.slide-item img {
-  width: cover;
-  height: 300px;
-  object-fit: contain;
-  margin-bottom: 12px;
-  transition: transform 0.3s ease;
-}
-
-.slide-item:hover img {
-  transform: scale(1.05);
-}
-
-/* TITLE */
-.slide-item h4 {
-  color: green;
-  font-size: 16px;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
-
-/* DESC */
-.cert-footer-text {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .slide-item {
-    width: 180px;
-  }
-}
-
-.whatsapp-contact a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #25D366;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s ease;
-}
-
-.whatsapp-contact a:hover {
-  transform: scale(1.05);
-  color: #1ebe5d;
-}
-
-.whatsapp-contact i {
-  font-size: 22px;
-}
-
-/* ================= MOBILE RESPONSIVE IMPROVED ================= */
-@media (max-width: 768px) {
-
-  /* Header nhỏ gọn */
-  header {
-    height: 70px;
-  }
-
-  .header-content {
-    padding: 6px 12px;
-  }
-
-  .logo img {
-    height: 60px;
-    width: auto;
-  }
-
-  nav ul {
-    font-size: 14px;
-    gap: 10px;
-    margin-bottom: 0;
-  }
-
-  /* Hero */
-  #hero {
-    height: 55vh;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
-  /* Section bỏ margin lớn gây tràn */
-  .section {
-    margin: 0 14px;
-    padding: 30px 0;
-  }
-
-  /* Card full width */
-  .card {
-    padding: 16px;
-  }
-
-  .card h3 {
-    font-size: 14px;
-  }
-
-  .card ul {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* Carousel ảnh thấp hơn */
-  .carousel-slide img {
-    height: 220px;
-  }
-
-  /* Certification nhỏ hơn */
-  .slide-item {
-    width: 160px;
-    padding: 12px;
-  }
-
-  .slide-item img {
-    height: 180px;
-  }
-
-  /* Footer KHÔNG fixed để không che nội dung */
-  footer {
-    position: relative;
-  }
-}
-
-/* FIX GAP FOOTER MOBILE */
-@media (max-width: 768px) {
-  body {
-    padding-bottom: 0;
-  }
-}
-
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phúc Thành Investment - Giải pháp Đầu tư & Phát triển Bền vững</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Thiết lập cơ bản */
+        body {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #343a40; /* Màu chữ chính */
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+            color: purple;
+        }
+
+        a {
+            text-decoration: none;
+            color: purple;
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        h1, h2, h3 {
+            color: purple;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa; /* Màu nền xám nhạt */
+        }
+
+        /* CSS MỚI: Tạo khu vực background liền mạch */
+        .continuous-area {
+             /* Giữ nguyên background như file gốc để đảm bảo tính nhất quán */
+             background: url('https://img.freepik.com/free-photo/white-cloud-blue-sky-sea_74190-4488.jpg?semt=ais_hybrid&w=740&q=80');
+             background-repeat: no-repeat;
+             background-size: cover;
+        }
+
+        /* Đảm bảo màu chữ trong vùng background liền mạch được giữ nguyên theo thiết kế */
+        .continuous-area h2,
+        .continuous-area h3,
+        .continuous-area p,
+        .continuous-area ul,
+        .continuous-area li {
+            color: purple;
+        }
+        
+        .continuous-area .solution-item i {
+            color: #0056b3; /* Màu xanh đậm theo thiết kế cũ */
+        }
+        
+        .continuous-area .slider-arrow {
+            color: #0056b3; /* Màu xanh đậm theo thiết kế cũ */
+        }
+
+
+        /* Header & Navigation */
+        header {
+            background: url('https://wallpapers.com/images/hd/belarus-clear-sky-i3hg2vmwf0lcn125.jpg') no-repeat center center/cover;
+            color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 120px; /* Chiều cao tối đa của logo */
+            width: 200px; /* Giữ tỷ lệ */
+            display: block;
+        }
+
+        .logo strong {
+            color: blue; /* Màu xanh lá phụ trợ */
+        }
+
+        nav a {
+            margin-left: 20px;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .contact-btn {
+            background-color: lightskyblue; /* Nút Liên hệ màu xanh lá nổi bật */
+            color: purple !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 30px;
+        }
+
+        .contact-btn:hover {
+            background-color: blue;
+        }
+        
+        /* CSS cho phần chọn ngôn ngữ mới */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .lang-button {
+            background-color: transparent;
+            border: none;
+            color: purple;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+        
+        /* Loại bỏ style của thẻ 'a' cho nút ngôn ngữ */
+        .lang-button:hover {
+             color: blue;
+             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-button.active {
+            color: blue;
+            background-color: lightskyblue;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            /* Giữ nguyên background như file gốc để đảm bảo tính nhất quán */
+            background: url('https://wallpapers.com/images/hd/vietnam-saigon-river-jeivm8p50eelpvjo.jpg') no-repeat center center/cover;
+            color: lightskyblue;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: blue;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: purple;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: lightskyblue;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .solutions-section h2 {
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .solution-grid {
+            display: flex;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .solution-item {
+            flex: 1;
+            /* Đổi background item thành màu trắng để nổi bật trên nền lightblue */
+            background-color: white; 
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #0056b3;
+        }
+
+        .solution-item i {
+            font-size: 2.5em;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .solution-item h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .solution-item ul {
+            list-style-type: '✔️ '; /* Biểu tượng tùy chỉnh */
+            padding-left: 20px;
+            line-height: 2;
+        }
+        
+        /* Style cho phần Sự kiện (Được thay thế cho Khách hàng/Đối tác) */
+        .event-grid {
+            display: flex;
+            gap: 30px;
+            text-align: left;
+            margin-top: 30px;
+        }
+        
+        .event-item {
+            flex: 1;
+            background-color: white;
+            /* Thay đổi padding để hình ảnh có thể full width */
+            padding: 0; 
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid lightskyblue;
+            text-align: center;
+            overflow: hidden; /* Quan trọng để hình ảnh không tràn ra ngoài border-radius */
+        }
+        
+        /* Class mới cho nội dung chữ để duy trì padding */
+        .event-content {
+            padding: 20px;
+        }
+        
+        .event-item h3 {
+            color: purple;
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+        
+        .event-item p {
+            color: #343a40;
+            font-size: 0.9em;
+        }
+        
+        /* CSS cho hình ảnh sự kiện - Căn full width */
+        .event-item img {
+            width: 100%;
+            max-width: 100%; /* Đã loại bỏ giới hạn 200px */
+            height: auto;
+            /* Chỉ áp dụng border-radius cho phía dưới nếu cần, hoặc để 0 để cạnh trên sát .event-item */
+            border-radius: 0 0 8px 8px; 
+            margin-bottom: 0; /* Loại bỏ margin để hình ảnh liền mạch với nội dung bên dưới */
+            box-shadow: none; /* Loại bỏ box-shadow để không làm hỏng viền */
+        }
+
+
+        /* Client & Partner Section (Slider Mockup) */
+        .client-partner-section {
+            /* Giảm padding để tạo cảm giác liền mạch hơn giữa 3 sections */
+            padding: 40px 0; 
+            text-align: center;
+        }
+
+        .client-partner-section h2 {
+            margin-bottom: 10px;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Footer */
+        footer {
+            /* Vẫn giữ nguyên style này để đảm bảo liền mạch với các section trên */
+            background: url('https://wallpapers.com/images/hd/belarus-clear-sky-i3hg2vmwf0lcn125.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 40px 0 10px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #495057;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h3 {
+            color: purple;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            color: purple;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: blue;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.9em;
+            color: purple;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .solution-grid {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .event-grid {
+                flex-direction: column;
+            }
+        }
+        
+        /* --- CSS CHO CHATBOT (GIỮ NGUYÊN) --- */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+
+        #chatbot-toggle-btn {
+            background-color: purple;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            font-size: 1.5em;
+        }
+
+        #chatbot-toggle-btn:hover {
+            background-color: blue;
+        }
+
+        #chatbot-window {
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            display: none; /* Mặc định ẩn */
+            flex-direction: column;
+            margin-bottom: 10px; /* Khoảng cách với nút */
+            overflow: hidden;
+        }
+
+        #chatbot-header {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #chatbot-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 15px;
+            line-height: 1.4;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: lightskyblue;
+            color: #343a40;
+            border-bottom-left-radius: 0;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: purple;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+        
+        .message-loading {
+            background-color: #e9ecef;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        #chatbot-input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        #chatbot-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        #chatbot-send-btn {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #chatbot-send-btn:hover {
+            background-color: blue;
+        }
+        /* --- KẾT THÚC CSS CHATBOT --- */
+
+    </style>
 </head>
+<body onload="setLanguage('vi')"> <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="https://phucthanhgroup.com/" target="_blank">
+                <img src="https://cdn.bitrix24.com/b28854747/landing/654/654ebc9ae06f9608f25efb83a9fbfb49/logo_removebg_preview_1x.png" alt="Phúc Thành Investment Logo" title="Phúc Thành Investment">
+                </a>
+            </div>
+            <nav>
+                <a href="https://phucthanhgroup.com/" data-lang-key="nav_main">Trang Chủ</a>
+                <a href="#gioithieu" data-lang-key="nav_about">Giới Thiệu</a>
+                <a href="#linhvuc" data-lang-key="nav_investment_areas">Lĩnh Vực Đầu Tư</a>
+                <a href="#sukien" data-lang-key="nav_events">Sự Kiện</a>
+                <a href="#lienhe" class="contact-btn" data-lang-key="nav_contact">Liên Hệ</a>
+                
+                 <div class="language-switcher">
+                    <button class="lang-button active" onclick="setLanguage('vi')" data-lang="vi">VI</button>
+                    <button class="lang-button" onclick="setLanguage('en')" data-lang="en">EN</button>
+                    <button class="lang-button" onclick="setLanguage('zh')" data-lang="zh">中文</button>
+                    <button class="lang-button" onclick="setLanguage('ko')" data-lang="ko">한</button>
+                </div>
+                
+            </nav>
+        </div>
+    </header>
 
-<body>
+    <main>
+        <section id="gioithieu" class="hero">
+            <div class="container">
+                <a href="#linhvuc" class="cta-button" data-lang-key="hero_cta">Khám Phá Cơ Hội Đầu Tư</a>
+            </div>
+        </section>
 
-<header>
-  <div class="container header-content">
-    <div class="logo">
-      <img src="https://cdn.bitrix24.com/b28854747/landing/8ce/8ce3f828f3a0b0daf0cd7031c2e8b22d/chatgpt_image_jan_13_2026_04_49_31_pm_1x.png">
+         <section class="about-us bg-light">
+            <div class="container">
+                <h2 style="font-size: 35px" data-lang-key="about_title">Giới Thiệu</h2>
+               <p style="font-size: 20px" data-lang-key="about_description">Investment (Đầu tư) là một lĩnh vực chiến lược của Phúc Thành Group. Chúng tôi tập trung đầu tư vào các lĩnh vực tiềm năng như bất động sản, xây dựng, thương mại – dịch vụ, năng lượng và sản xuất công nghiệp, nhằm tạo ra giá trị thực và đồng hành cùng sự phát triển bền vững.</p>
+            </div>
+        </section>
+        
+        <section class="continuous-area">
+            
+            <section id="linhvuc" class="solutions-section">
+                <div class="container">
+                    <h2 data-lang-key="investment_areas_title">Các Lĩnh Vực Đầu Tư Chiến Lược</h2>
+                    <div class="solution-grid">
+
+                        <div class="solution-item">
+                            <i class="fas fa-seedling"></i>
+                            <h3 data-lang-key="investment_agri_title">Nông nghiệp thông minh</h3>
+                            <p data-lang-key="investment_agri_desc">Smart agriculture</p>
+                            <ul>
+                                <li data-lang-key="investment_agri_list_1">Triển khai các giải pháp IoT trong quản lý và sản xuất nông nghiệp.</li>
+                                <li data-lang-key="investment_agri_list_2">Đầu tư và phát triển dự án nông nghiệp.</li>
+                                <li data-lang-key="investment_agri_list_3">Quản lý và sản xuất nông nghiệp theo mô hình “3 nhà” (Nhà nông – Nhà khoa học – Nhà doanh nghiệp).</li>
+                                <li data-lang-key="investment_agri_list_4">Tối ưu hóa năng suất, giảm thiểu rủi ro và nâng cao giá trị sản phẩm nông nghiệp.</li>
+                            </ul>
+                        </div>
+
+                        <div class="solution-item">
+                            <i class="fas fa-bolt"></i>
+                            <h3 data-lang-key="investment_energy_title">Năng lượng & Sản xuất Công nghiệp</h3>
+                            <p data-lang-key="investment_energy_desc">Energy & Industrial Production</p>
+                            <ul>
+                                <li data-lang-key="investment_energy_list_1">Tập trung vốn vào các dự án năng lượng sạch và phát triển các nhà máy sản xuất công nghiệp trọng điểm, đóng góp vào chuỗi cung ứng quốc gia.</li>
+                                <li data-lang-key="investment_energy_list_2">Đầu tư vào nguồn năng lượng tái tạo (mặt trời, gió).</li>
+                                <li data-lang-key="investment_energy_list_3">Phát triển nhà máy sản xuất vật liệu công nghiệp.</li>
+                                <li data-lang-key="investment_energy_list_4">Cung cấp giải pháp công nghiệp và máy móc.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sukien" class="client-partner-section">
+                <div class="container">
+                    <h2 data-lang-key="events_title">Sự Kiện Đầu Tư</h2>
+                    <p data-lang-key="events_subtitle">Các hoạt động và dự án tiêu biểu mà chúng tôi đang triển khai.</p>
+                    <div class="event-grid">
+                        
+                        <div class="event-item">
+                            <img src="https://nextfarm.vn/wp-content/uploads/2021/10/ung-dung-iot-trong-nong-nghiep-cong-nghe-cao-bkaii.jpg" alt="IOT trong nông nghiệp">
+                            <div class="event-content">
+                                <h3 data-lang-key="event_iot_title">IOT trong nông nghiệp</h3>
+                                <p data-lang-key="event_iot_desc">Triển khai các giải pháp IoT trong quản lý và sản xuất nông nghiệp theo mô hình “3 nhà” (Nhà nông – Nhà khoa học – Nhà doanh nghiệp), nhằm tối ưu hóa năng suất, giảm thiểu rủi ro và nâng cao giá trị sản phẩm nông nghiệp.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <img src="https://khpt.1cdn.vn/2024/09/30/3-4-.jpg" alt="Khai thác năng lượng tái tạo trong nông nghiệp">
+                            <div class="event-content">
+                                <h3 data-lang-key="event_agri_pv_title">Khai thác năng lượng tái tạo trong nông nghiệp</h3>
+                                <p data-lang-key="event_agri_pv_desc">Kết hợp điện mặt trời và sản xuất cây trồng, hay điện nông kết hợp (agri-PV hay Agrivoltaics), hạn chế tác động tiêu cực của biến đổi khí hậu lên trái đất.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <img src="https://nzs.vn/wp-content/uploads/2025/04/nang-luong-sach-4.jpg" alt="Năng lượng sạch">
+                            <div class="event-content">
+                                <h3 data-lang-key="event_clean_energy_title">Năng lượng sạch: Khám phá các nguồn năng lượng sạch và tương lai bền vững</h3>
+                                <p data-lang-key="event_clean_energy_desc">Năng lượng được tạo ra từ các quy trình hoặc nguồn năng lượng sạch mà trong quá trình vận hành, chúng không phát thải khí nhà kính (như CO2, CH4…) hoặc các chất gây ô nhiễm không khí khác (như SO2, NOx, bụi mịn) vào bầu khí quyển.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        
+        </section>
+        </main>
+
+    <footer id="lienhe">
+    <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3 data-lang-key="footer_contact_title">Liên Hệ Chính</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">Địa chỉ: Tầng 3 - 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội</span></p>
+                    <p><i class="fas fa-phone-alt"></i> <span data-lang-key="footer_phone">Điện thoại: +84 24 3976 3357</span></p>
+                    <p><i class="fas fa-envelope"></i> <span data-lang-key="footer_email">Email: info@phucthanhgroup.com</span></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="year"></span> PHUC THANH VIETNAM JSC.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="chatbot-container">
+        <div id="chatbot-window">
+            <div id="chatbot-header" data-lang-key="chat_header">Phúc Thành Investment Chatbot</div>
+            <div id="chatbot-messages">
+                <div class="message bot-message" data-lang-key="chat_welcome">Chào mừng bạn đến với Phúc Thành Investment! Bạn cần hỗ trợ gì về các Lĩnh vực Đầu tư chiến lược?</div>
+            </div>
+            <div id="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Nhập câu hỏi của bạn...">
+                <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button id="chatbot-toggle-btn"><i class="fas fa-comments"></i></button>
     </div>
-    <nav>
-      <ul>
-        <li><a href="homepage">Back to Homepage</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
-<section id="hero">
-  <div class="hero-slider"></div>
-  <div class="hero-content">
-    <h1>TERMS AND CONDITIONS</h1>
-  </div>
-</section>
+    <script>
+        // --- Đối tượng Dịch Ngôn Ngữ (GIỮ NGUYÊN) ---
+        const translations = {
+            'vi': {
+                'nav_main': 'Trang Chủ',
+                'nav_about': 'Giới Thiệu',
+                'nav_investment_areas': 'Lĩnh Vực Đầu Tư',
+                'nav_events': 'Sự Kiện',
+                'nav_contact': 'Liên Hệ',
+                'hero_title': 'Phúc Thành Investment',
+                'hero_slogan': 'Phát triển các giải pháp đầu tư thông minh, linh hoạt và bền vững, tạo ra giá trị thực cho khách hàng và cộng đồng.',
+                'hero_cta': 'Khám Phá Cơ Hội Đầu Tư',
+                'about_title': 'Giới Thiệu',
+                'about_description': 'Investment (Đầu tư) là một lĩnh vực chiến lược của Phúc Thành Group. Chúng tôi tập trung đầu tư vào các lĩnh vực tiềm năng như bất động sản, xây dựng, thương mại – dịch vụ, năng lượng và sản xuất công nghiệp, nhằm tạo ra giá trị thực và đồng hành cùng sự phát triển bền vững.',
+                'investment_areas_title': 'Các Lĩnh Vực Đầu Tư Chiến Lược',
+                'investment_agri_title': 'Nông nghiệp thông minh',
+                'investment_agri_desc': 'Smart agriculture',
+                'investment_agri_list_1': 'Triển khai các giải pháp IoT trong quản lý và sản xuất nông nghiệp.',
+                'investment_agri_list_2': 'Đầu tư và phát triển dự án nông nghiệp.',
+                'investment_agri_list_3': 'Quản lý và sản xuất nông nghiệp theo mô hình “3 nhà” (Nhà nông – Nhà khoa học – Nhà doanh nghiệp).',
+                'investment_agri_list_4': 'Tối ưu hóa năng suất, giảm thiểu rủi ro và nâng cao giá trị sản phẩm nông nghiệp.',
+                'investment_energy_title': 'Năng lượng & Sản xuất Công nghiệp',
+                'investment_energy_desc': 'Energy & Industrial Production',
+                'investment_energy_list_1': 'Tập trung vốn vào các dự án năng lượng sạch và phát triển các nhà máy sản xuất công nghiệp trọng điểm, đóng góp vào chuỗi cung ứng quốc gia.',
+                'investment_energy_list_2': 'Đầu tư vào nguồn năng lượng tái tạo (mặt trời, gió).',
+                'investment_energy_list_3': 'Phát triển nhà máy sản xuất vật liệu công nghiệp.',
+                'investment_energy_list_4': 'Cung cấp giải pháp công nghiệp và máy móc.',
+                'events_title': 'Sự Kiện Đầu Tư',
+                'events_subtitle': 'Các hoạt động và dự án tiêu biểu mà chúng tôi đang triển khai.',
+                'event_iot_title': 'IOT trong nông nghiệp',
+                'event_iot_desc': 'Triển khai các giải pháp IoT trong quản lý và sản xuất nông nghiệp theo mô hình “3 nhà” (Nhà nông – Nhà khoa học – Nhà doanh nghiệp), nhằm tối ưu hóa năng suất, giảm thiểu rủi ro và nâng cao giá trị sản phẩm nông nghiệp.',
+                'event_agri_pv_title': 'Khai thác năng lượng tái tạo trong nông nghiệp',
+                'event_agri_pv_desc': 'Kết hợp điện mặt trời và sản xuất cây trồng, hay điện nông kết hợp (agri-PV hay Agrivoltaics), hạn chế tác động tiêu cực của biến đổi khí hậu lên trái đất.',
+                'event_clean_energy_title': 'Năng lượng sạch: Khám phá các nguồn năng lượng sạch và tương lai bền vững',
+                'event_clean_energy_desc': 'Năng lượng được tạo ra từ các quy trình hoặc nguồn năng lượng sạch mà trong quá trình vận hành, chúng không phát thải khí nhà kính (như CO2, CH4…) hoặc các chất gây ô nhiễm không khí khác (như SO2, NOx, bụi mịn) vào bầu khí quyển.',
+                'footer_contact_title': 'Liên Hệ Chính',
+                'footer_address': 'Địa chỉ: Tầng 3 - 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội',
+                'footer_phone': 'Điện thoại: +84 24 3976 3357',
+                'footer_email': 'Email: info@phucthanhgroup.com',
+                'chat_header': 'Phúc Thành Investment Chatbot',
+                'chat_welcome': 'Chào mừng bạn đến với Phúc Thành Investment! Bạn cần hỗ trợ gì về các Lĩnh vực Đầu tư chiến lược?',
+                'chat_placeholder': 'Nhập câu hỏi của bạn...',
+            },
+            'en': {
+                'nav_main': 'Homepage',
+                'nav_about': 'About Us',
+                'nav_investment_areas': 'Investment Areas',
+                'nav_events': 'Events',
+                'nav_contact': 'Contact',
+                'hero_title': 'Phuc Thanh Investment',
+                'hero_slogan': 'Develop smart, flexible, and sustainable investment solutions, creating real value for customers and the community.',
+                'hero_cta': 'Explore Investment Opportunities',
+                'about_title': 'About Us',
+                'about_description': 'Investment is a strategic sector of Phuc Thanh Group. We focus on investing in potential areas such as real estate, construction, commerce - services, energy, and industrial production, aiming to create real value and accompany sustainable development.',
+                'investment_areas_title': 'Strategic Investment Areas',
+                'investment_agri_title': 'Smart Agriculture',
+                'investment_agri_desc': 'Smart agriculture',
+                'investment_agri_list_1': 'Implementing IoT solutions in agricultural management and production.',
+                'investment_agri_list_2': 'Investing in and developing agricultural projects.',
+                'investment_agri_list_3': 'Managing and producing agriculture under the "3 Houses" model (Farmer – Scientist – Entrepreneur).',
+                'investment_agri_list_4': 'Optimizing productivity, minimizing risks, and enhancing the value of agricultural products.',
+                'investment_energy_title': 'Energy & Industrial Production',
+                'investment_energy_desc': 'Energy & Industrial Production',
+                'investment_energy_list_1': 'Focusing capital on clean energy projects and developing key industrial production plants, contributing to the national supply chain.',
+                'investment_energy_list_2': 'Investing in renewable energy sources (solar, wind).',
+                'investment_energy_list_3': 'Developing industrial materials production plants.',
+                'investment_energy_list_4': 'Providing industrial solutions and machinery.',
+                'events_title': 'Investment Events',
+                'events_subtitle': 'Typical activities and projects we are implementing.',
+                'event_iot_title': 'IOT in Agriculture',
+                'event_iot_desc': 'Implementing IoT solutions in agricultural management and production under the “3 Houses” model (Farmer – Scientist – Entrepreneur), to optimize productivity, minimize risks, and enhance the value of agricultural products.',
+                'event_agri_pv_title': 'Exploiting Renewable Energy in Agriculture',
+                'event_agri_pv_desc': 'Combining solar power and crop production, or Agrivoltaics, to limit the negative impacts of climate change on the earth.',
+                'event_clean_energy_title': 'Clean Energy: Exploring Clean Energy Sources and a Sustainable Future',
+                'event_clean_energy_desc': 'Energy generated from clean processes or sources that, during operation, do not emit greenhouse gases (such as CO2, CH4, etc.) or other air pollutants (such as SO2, NOx, fine dust) into the atmosphere.',
+                'footer_contact_title': 'Key Contact',
+                'footer_address': 'Address: 3rd Floor - 51 Le Dai Hanh, Hai Ba Trung, Hanoi',
+                'footer_phone': 'Phone: +84 24 3976 3357',
+                'footer_email': 'Email: info@phucthanhgroup.com',
+                'chat_header': 'Phuc Thanh Investment Chatbot',
+                'chat_welcome': 'Welcome to Phuc Thanh Investment! How can I assist you with strategic Investment areas?',
+                'chat_placeholder': 'Enter your question...',
+            },
+            'zh': {
+                'nav_main': '主页',
+                'nav_about': '关于我们',
+                'nav_investment_areas': '投资领域',
+                'nav_events': '活动',
+                'nav_contact': '联系方式',
+                'hero_title': '福成投资',
+                'hero_slogan': '开发智能、灵活和可持续的投资解决方案，为客户和社区创造真正的价值。',
+                'hero_cta': '探索投资机会',
+                'about_title': '关于我们',
+                'about_description': '投资是福成集团的战略领域之一。我们专注于投资于房地产、建筑、商业服务、能源和工业生产等潜在领域，旨在创造实际价值并伴随可持续发展。',
+                'investment_areas_title': '战略投资领域',
+                'investment_agri_title': '智能农业',
+                'investment_agri_desc': '智能农业',
+                'investment_agri_list_1': '在农业管理和生产中实施物联网解决方案。',
+                'investment_agri_list_2': '投资和开发农业项目。',
+                'investment_agri_list_3': '按照“三家”模式（农民–科学家–企业家）管理和生产农业。',
+                'investment_agri_list_4': '优化生产力，最小化风险，并提高农产品价值。',
+                'investment_energy_title': '能源与工业生产',
+                'investment_energy_desc': '能源与工业生产',
+                'investment_energy_list_1': '将资金集中于清洁能源项目和发展重点工业生产工厂，为国家供应链做出贡献。',
+                'investment_energy_list_2': '投资于可再生能源（太阳能、风能）。',
+                'investment_energy_list_3': '发展工业材料生产厂。',
+                'investment_energy_list_4': '提供工业解决方案和机械。',
+                'events_title': '投资活动',
+                'events_subtitle': '我们正在实施的典型活动和项目。',
+                'event_iot_title': '农业物联网',
+                'event_iot_desc': '在“三家”模式（农民–科学家–企业家）下，在农业管理和生产中实施物联网解决方案，以优化生产力，最小化风险，并提高农产品价值。',
+                'event_agri_pv_title': '在农业中利用可再生能源',
+                'event_agri_pv_desc': '结合太阳能发电和作物生产，或农光互补（agri-PV 或 Agrivoltaics），以限制气候变化对地球的负面影响。',
+                'event_clean_energy_title': '清洁能源：探索清洁能源来源和可持续未来',
+                'event_clean_energy_desc': '能源是通过清洁过程或来源产生的，在运行过程中，它们不会向大气排放温室气体（如CO2、CH4等）或其他空气污染物（如SO2、NOx、细尘）。',
+                'footer_contact_title': '主要联系信息',
+                'footer_address': '地址: 河内市二征夫人郡黎大行路51号3楼',
+                'footer_phone': '电话: +84 24 3976 3357',
+                'footer_email': '邮箱: info@phucthanhgroup.com',
+                'chat_header': '福成投资聊天机器人',
+                'chat_welcome': '欢迎来到福成投资！您需要战略投资领域方面的帮助吗？',
+                'chat_placeholder': '输入您的问题...',
+            },
+            'ko': {
+                'nav_main': '홈페이지',
+                'nav_about': '회사 소개',
+                'nav_investment_areas': '투자 분야',
+                'nav_events': '이벤트',
+                'nav_contact': '연락처',
+                'hero_title': '푹탄 투자',
+                'hero_slogan': '스마트하고 유연하며 지속 가능한 투자 솔루션을 개발하여 고객과 지역사회에 실질적인 가치를 창출합니다.',
+                'hero_cta': '투자 기회 탐색',
+                'about_title': '회사 소개',
+                'about_description': '투자는 푹탄 그룹의 전략적 부문 중 하나입니다. 우리는 부동산, 건설, 상업-서비스, 에너지 및 산업 생산과 같은 잠재적 분야에 투자를 집중하여 실질적인 가치를 창출하고 지속 가능한 발전에 기여하는 것을 목표로 합니다.',
+                'investment_areas_title': '전략적 투자 분야',
+                'investment_agri_title': '스마트 농업',
+                'investment_agri_desc': '스마트 농업',
+                'investment_agri_list_1': '농업 관리 및 생산에 IoT 솔루션 구현.',
+                'investment_agri_list_2': '농업 프로젝트 투자 및 개발.',
+                'investment_agri_list_3': '“3 주체” 모델 (농민 – 과학자 – 기업가)에 따른 농업 관리 및 생산.',
+                'investment_agri_list_4': '생산성 최적화, 위험 최소화, 농산물 가치 향상.',
+                'investment_energy_title': '에너지 및 산업 생산',
+                'investment_energy_desc': 'Energy & Industrial Production',
+                'investment_energy_list_1': '청정 에너지 프로젝트에 자본을 집중하고 주요 산업 생산 공장을 개발하여 국가 공급망에 기여.',
+                'investment_energy_list_2': '재생 에너지원 (태양광, 풍력) 투자.',
+                'investment_energy_list_3': '산업 자재 생산 공장 개발.',
+                'investment_energy_list_4': '산업 솔루션 및 기계 제공.',
+                'events_title': '투자 이벤트',
+                'events_subtitle': '현재 우리가 추진하고 있는 주요 활동 및 프로젝트.',
+                'event_iot_title': '농업의 IoT',
+                'event_iot_desc': '“3 주체” 모델 (농민 – 과학자 – 기업가)에 따라 농업 관리 및 생산에 IoT 솔루션을 구현하여 생산성을 최적화하고 위험을 최소화하며 농산물 가치를 향상시킵니다.',
+                'event_agri_pv_title': '농업에서 재생 에너지 활용',
+                'event_agri_pv_desc': '태양광 발전과 작물 생산 또는 농업 태양광(agri-PV 또는 Agrivoltaics)을 결합하여 기후 변화가 지구에 미치는 부정적인 영향을 제한합니다.',
+                'event_clean_energy_title': '청정 에너지: 청정 에너지원 및 지속 가능한 미래 탐색',
+                'event_clean_energy_desc': '운영 과정에서 온실 가스 (CO2, CH4 등) 또는 기타 대기 오염 물질 (SO2, NOx, 미세먼지 등)을 대기 중으로 배출하지 않는 청정 프로세스 또는 에너지원에서 생성되는 에너지.',
+                'footer_contact_title': '주요 연락 정보',
+                'footer_address': '주소: 하노이 하이바쯩 레다이행 51번지 3층',
+                'footer_phone': '전화: +84 24 3976 3357',
+                'footer_email': '이메일: info@phucthanhgroup.com',
+                'chat_header': '푹탄 투자 챗봇',
+                'chat_welcome': '푹탄 투자에 오신 것을 환영합니다! 전략적 투자 분야에 대해 도움이 필요하신가요?',
+                'chat_placeholder': '질문을 입력하세요...',
+            }
+        };
+        
+        // Dữ liệu nội dung gốc của trang web bằng Tiếng Việt (GIỮ NGUYÊN)
+        const pageContent = {
+            'about': translations.vi.about_description,
+            'investment': `Lĩnh vực Nông nghiệp thông minh: ${translations.vi.investment_agri_desc}. Bao gồm: ${translations.vi.investment_agri_list_1}, ${translations.vi.investment_agri_list_2}, ${translations.vi.investment_agri_list_3}, ${translations.vi.investment_agri_list_4}.
+                          Lĩnh vực Năng lượng & Sản xuất Công nghiệp: ${translations.vi.investment_energy_desc}. Bao gồm: ${translations.vi.investment_energy_list_1}, ${translations.vi.investment_energy_list_2}, ${translations.vi.investment_energy_list_3}, ${translations.vi.investment_energy_list_4}.`,
+            'events': `Sự kiện IOT trong nông nghiệp: ${translations.vi.event_iot_desc}.
+                     Sự kiện Khai thác năng lượng tái tạo trong nông nghiệp: ${translations.vi.event_agri_pv_desc}.
+                     Sự kiện Năng lượng sạch: ${translations.vi.event_clean_energy_desc}.`,
+            'contact': `Địa chỉ: ${translations.vi.footer_address}. Điện thoại: ${translations.vi.footer_phone}. Email: ${translations.vi.footer_email}.`,
+            'default': 'Xin lỗi, tôi chỉ có thể trả lời các câu hỏi liên quan đến Phúc Thành Investment (Giới thiệu, Lĩnh vực Đầu tư, Sự kiện, Liên hệ). Vui lòng đặt câu hỏi khác.',
+        };
+        
+        let currentLang = 'vi'; // Biến theo dõi ngôn ngữ hiện tại
+        
+        // Hàm mô phỏng dịch thuật (GIỮ NGUYÊN)
+        function translateText(text, targetLang) {
+            if (targetLang === 'vi') return text;
+            
+            if (text.includes('Chào mừng bạn')) {
+                return translations[targetLang].chat_welcome;
+            } 
+            
+            if (text.includes('Xin lỗi, tôi chỉ có thể trả lời')) {
+                const defaultResponses = {
+                    'en': "I apologize, I can only answer questions related to Phuc Thanh Investment (About Us, Investment Areas, Events, Contact). Please ask another question.",
+                    'zh': "抱歉，我只能回答与福成投资（关于我们、投资领域、活动、联系方式）相关的问题。请问其他问题。",
+                    'ko': "죄송합니다. 푹탄 투자 (회사 소개, 투자 분야, 이벤트, 연락처)와 관련된 질문에만 답변할 수 있습니다. 다른 질문을 해주세요。",
+                };
+                return defaultResponses[targetLang] || text;
+            }
+            
+            return `[Cần API dịch thuật] ${text}`;
+        }
 
-<section id="products" class="section">
-  <div class="container">
-    <h2 style="color: purple">TERMS AND CONDITIONS</h2>
-    <div class="product-cards">
-      <div class="card">
-        <h3 style="color: blue">By accessing or using this website, you agree to comply with and be bound by the following Terms and Conditions. Please read them carefully before using our services.</h3>
-        <ul> <b>
-          <li> General Information:
-This website is operated by PHUC THANH VIETNAM JSC under the brand name BLISSWHIP. These Terms apply to all visitors, customers, and users of this website.
-We reserve the right to update or modify these Terms at any time without prior notice. Continued use of the website constitutes acceptance of the updated Terms.</li>
-          <li>Product Use Disclaimer:
 
-All products sold by BLISSWHIP are intended strictly for culinary and food preparation purposes only.
+        // Hàm logic Chatbot (GIỮ NGUYÊN)
+        function getBotResponse(userMessage) {
+            const msg = userMessage.toLowerCase();
+            
+            if (msg.includes('giới thiệu') || msg.includes('về công ty') || msg.includes('phúc thành group')) {
+                return pageContent.about;
+            } else if (msg.includes('lĩnh vực') || msg.includes('đầu tư') || msg.includes('nông nghiệp') || msg.includes('năng lượng') || msg.includes('sản xuất')) {
+                return pageContent.investment;
+            } else if (msg.includes('sự kiện') || msg.includes('iot') || msg.includes('tái tạo') || msg.includes('năng lượng sạch')) {
+                return pageContent.events;
+            } else if (msg.includes('liên hệ') || msg.includes('địa chỉ') || msg.includes('điện thoại') || msg.includes('email')) {
+                return pageContent.contact;
+            } else if (msg.includes('chào') || msg.includes('hello') || msg.includes('xin chào')) {
+                return translations.vi.chat_welcome; 
+            } else {
+                return pageContent.default;
+            }
+        }
+        
+        // Hàm hiển thị tin nhắn (GIỮ NGUYÊN)
+        function appendMessage(sender, message) {
+            const messagesContainer = document.getElementById('chatbot-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = message;
+            messagesContainer.appendChild(messageDiv);
+            
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            return messageDiv;
+        }
 
-Our products are not intended for medical use, recreational use, inhalation purposes, or any illegal activities.
+        // Xử lý gửi tin nhắn (GIỮ NGUYÊN)
+        function sendMessage() {
+            const inputElement = document.getElementById('chatbot-input');
+            const userMessage = inputElement.value.trim();
 
-Customers are responsible for using products according to provided instructions and safety guidelines. BLISSWHIP is not responsible for damages, injuries, or legal issues caused by improper or unauthorized use.</li>
-          <li>Order Acceptance:
+            if (userMessage === '') return;
 
-All orders placed through this website are subject to acceptance and availability.
+            appendMessage('user', userMessage);
+            inputElement.value = '';
 
-We reserve the right to refuse or cancel any order for reasons including but not limited to:
-<br> - Product availability
-<br> - Pricing errors
-<br> - Suspected fraudulent activity
-<br> - Regulatory or shipping restrictions
+            const loadingMessage = appendMessage('bot', '...');
+            loadingMessage.classList.add('message-loading');
 
-If an order is canceled after payment has been processed, a full refund will be issued.</li>
-          <li>Pricing and Payment:
-
-All prices displayed on the website are subject to change without prior notice.
-
-Payments must be completed in full before orders are processed and shipped. We use secure third-party payment providers to handle transactions.</li>
-          <li>Intellectual Property:
-
-All content on this website, including logos, images, product descriptions, graphics, and text, is the property of PHUC THANH VIET NAM JSC and is protected by applicable intellectual property laws.
-
-Unauthorized use, reproduction, or distribution of any content from this website is prohibited.</li>
-          <li>Limitation of Liability:
-
-BLISSWHIP shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or website.
-
-Our total liability shall not exceed the amount paid by the customer for the purchased product.</li>
-          <li> Compliance with Laws:
-
-Customers are responsible for ensuring that the purchase and use of products comply with local laws and regulations.
-
-We reserve the right to restrict sales to certain regions or customers based on regulatory requirements.</li>
-          <li> Governing Law:
-
-These Terms and Conditions shall be governed by and interpreted in accordance with applicable commercial and consumer protection laws.
-</li>
-</b> </ul>
-      </div>
-    </div>    
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> BLISSWHIP</p>
-</footer>
-
-<script>
-let lastScrollTop = 0;
-const header = document.querySelector("header");
-const footer = document.querySelector("footer");
-
-window.addEventListener("scroll", function () {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop && scrollTop > 150) {
-    // Scroll xuống -> Ẩn header + footer
-    header.classList.add("hide-header");
-    footer.classList.add("hide-footer");
-  } else {
-    // Scroll lên -> Hiện header + footer
-    header.classList.remove("hide-header");
-    footer.classList.remove("hide-footer");
-  }
-
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+            setTimeout(() => {
+                loadingMessage.remove(); 
+                
+                const rawResponse = getBotResponse(userMessage);
+                const translatedResponse = translateText(rawResponse, currentLang); 
+                
+                appendMessage('bot', translatedResponse);
+                
+                document.getElementById('chatbot-input').placeholder = translations[currentLang].chat_placeholder;
+                document.getElementById('chatbot-header').textContent = translations[currentLang].chat_header;
 
 
+            }, 800); 
+        }
+
+        // --- Sự kiện Chatbot (GIỮ NGUYÊN) ---
+        document.getElementById('chatbot-toggle-btn').addEventListener('click', () => {
+            const chatbotWindow = document.getElementById('chatbot-window');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+            
+            if (chatbotWindow.style.display === 'flex') {
+                document.getElementById('chatbot-input').placeholder = translations[currentLang].chat_placeholder;
+                document.getElementById('chatbot-header').textContent = translations[currentLang].chat_header;
+            }
+        });
+
+        document.getElementById('chatbot-send-btn').addEventListener('click', sendMessage);
+        document.getElementById('chatbot-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Logic khi DOM đã load
+        });
+        
+        // --- Chức năng Đa Ngôn Ngữ (GIỮ NGUYÊN) ---
+        function setLanguage(lang) {
+            currentLang = lang; 
+            const elements = document.querySelectorAll('[data-lang-key]');
+            const currentTranslation = translations[lang];
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (currentTranslation[key]) {
+                    if (element.tagName === 'A' && element.classList.contains('cta-button')) {
+                         element.textContent = currentTranslation[key];
+                    } else if (element.tagName === 'A' && element.classList.contains('contact-btn')) {
+                         element.textContent = currentTranslation[key];
+                    }
+                     else if (element.tagName === 'A') { 
+                         element.textContent = currentTranslation[key];
+                    }
+                    else if (element.tagName === 'SPAN') {
+                         element.textContent = currentTranslation[key];
+                    }
+                    else {
+                        element.textContent = currentTranslation[key];
+                    }
+                }
+            });
+            
+            document.getElementById('chatbot-input').placeholder = translations[lang].chat_placeholder;
+            document.getElementById('chatbot-header').textContent = translations[lang].chat_header;
+            
+            const welcomeMessage = document.querySelector('#chatbot-messages .bot-message');
+            if(welcomeMessage && welcomeMessage.getAttribute('data-lang-key') === 'chat_welcome'){
+                 welcomeMessage.textContent = translations[lang].chat_welcome;
+            }
+
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.lang-button[data-lang="${lang}"]`).classList.add('active');
+            
+            document.documentElement.lang = lang; 
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
